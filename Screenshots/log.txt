@@ -1,0 +1,9 @@
+INFO:root:Running config files.
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:61440/session/62273c43373206fc5233ed169b6abda4/url {"url": "https://opensource-demo.orangehrmlive.com/"}
+DEBUG:urllib3.connectionpool:http://127.0.0.1:61440 "POST /session/62273c43373206fc5233ed169b6abda4/url HTTP/1.1" 200 14
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+WARNING:root:This is just a sample warning.
+INFO:root:Taking screenshot...
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:61440/session/62273c43373206fc5233ed169b6abda4/screenshot {}
+DEBUG:urllib3.connectionpool:http://127.0.0.1:61440 "GET /session/62273c43373206fc5233ed169b6abda4/screenshot HTTP/1.1" 200 223204
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
