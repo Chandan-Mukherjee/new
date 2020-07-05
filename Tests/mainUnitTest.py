@@ -6,7 +6,9 @@ from selenium import webdriver
 from configparser import ConfigParser
 from Pages.homePage import HomePage
 from Pages.loginpage import Loginpage
+from Pages.userPage import UserPage
 import HTMLTestRunner
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 # sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -51,6 +53,10 @@ class SampleUnitTest(unittest.TestCase):
 
         login.click_enter()
         homepage = HomePage(self.driver)
+
+        userpage = UserPage(self.driver)
+        userpage.click_on_users()
+
         homepage.click_on_welcome()
         homepage.click_logout()
 
