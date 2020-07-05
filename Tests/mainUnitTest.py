@@ -1,14 +1,25 @@
 import time
 import unittest
+# import os
+# import sys
 from selenium import webdriver
 from configparser import ConfigParser
 from Pages.homePage import HomePage
 from Pages.loginpage import Loginpage
+import HTMLTestRunner
+
+
+# sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+
+def test_sample2():
+    print('This is a sample test case.')
 
 
 class SampleUnitTest(unittest.TestCase):
     # https://www.youtube.com/watch?v=BURK7wMcCwU
     # (most important 33 mins)
+    # 43 mins
 
     def setUp(self) -> None:
         print('This is method level setup.')
@@ -45,9 +56,6 @@ class SampleUnitTest(unittest.TestCase):
 
         time.sleep(3)
 
-    def test_sample2(self):
-        print('This is a sample test case.')
-
 
 if __name__ == '__main__':
-    unittest.main()
+    HTMLTestRunner.main()

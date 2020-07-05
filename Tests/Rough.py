@@ -12,6 +12,11 @@ class BaseClass:
     # pip install html-testRunner
 
     def __init__(self):
+        self.config = ConfigParser()
+        self.site = self.config['DEFAULT']['url']
+        self.file = openpyxl.load_workbook(
+            r"C:\Users\Chandan Mukherjee\PycharmProjects\ProperProjectChandan\testdata.xlsx")
+        self.sheet = self.file.active
         self.driver = webdriver.Chrome(
             executable_path=r"C:\Users\Chandan Mukherjee\PycharmProjects\ProperProjectChandan\Browsers\chromedriver.exe")
         self.driver.maximize_window()
@@ -26,9 +31,6 @@ class BaseClass:
     def excelReader(self):
         logging.warning('This is just a sample warning.')
         # https://www.youtube.com/watch?v=AOTCpZbC80Y
-        self.file = openpyxl.load_workbook(
-            r"C:\Users\Chandan Mukherjee\PycharmProjects\ProperProjectChandan\testdata.xlsx")
-        self.sheet = self.file.active
         print(self.sheet.cell(row=1, column=1).value)
 
     def configReader(self):
@@ -36,10 +38,8 @@ class BaseClass:
         # https://www.youtube.com/watch?v=jBwfq6UMxkY
         # https://www.youtube.com/watch?v=Gdw0-QGq-z0
         # config.ini , this name is not mandatory, you can give any name.
-        self.config = ConfigParser()
         self.config.read('config.ini')
         print(self.config.sections())
-        self.site = self.config['DEFAULT']['url']
         print(self.site)
 
     def websiteGo(self):
