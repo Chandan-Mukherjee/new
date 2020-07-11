@@ -7,6 +7,11 @@ from configparser import ConfigParser
 from Pages.homePage import HomePage
 from Pages.loginpage import Loginpage
 from Pages.userPage import UserPage
+from Pages.timesheetPage import TimesheetPage
+from Pages.mainLogoToOpenNewTab import MainLogoToOpenNewTab
+from Pages.directoryPage import DirectoryPage
+from Pages.PIMpage import PIMPage
+from Pages.recruitmentPage import RecruitmentPage
 import HTMLTestRunner
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -57,10 +62,30 @@ class SampleUnitTest(unittest.TestCase):
         userpage = UserPage(self.driver)
         userpage.click_on_users()
 
+        timesheetpage = TimesheetPage(self.driver)
+        timesheetpage.check_timesheet()
+        timesheetpage.add_timesheet()
+
+        mainLogoToOpenNewTab = MainLogoToOpenNewTab(self.driver)
+        mainLogoToOpenNewTab.click_main_logo()
+        mainLogoToOpenNewTab.go_to_new_tab()
+        mainLogoToOpenNewTab.click_on_partners_tab()
+
+        directoryPage = DirectoryPage(self.driver)
+        directoryPage.search_directory()
+
+        pimpage = PIMPage(self.driver)
+        pimpage.select_all_IDs()
+        pimpage.scroll_into_view()
+
+        recruitmentpage = RecruitmentPage(self.driver)
+        recruitmentpage.candidates()
+        recruitmentpage.vacancies()
+
         homepage.click_on_welcome()
         homepage.click_logout()
 
-        time.sleep(3)
+        # time.sleep(3)
 
 
 if __name__ == '__main__':
