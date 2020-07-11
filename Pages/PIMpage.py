@@ -29,6 +29,6 @@ class PIMPage:
         time.sleep(5)
         self.driver.execute_script("arguments[0].scrollIntoView(true);",
                                    self.driver.find_element_by_link_text('OrangeHRM, Inc'))
-        self.driver.find_element_by_link_text('OrangeHRM, Inc').click()
-        time.sleep(2)
-        self.driver.switch_to.default_content()
+        # self.driver.find_element_by_link_text('OrangeHRM, Inc').click()
+        # time.sleep(2)
+        # self.driver.switch_to.default_content()

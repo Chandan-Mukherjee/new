@@ -1,4 +1,4 @@
-import time
+# import time
 import unittest
 # import os
 # import sys
@@ -13,7 +13,7 @@ from Pages.directoryPage import DirectoryPage
 from Pages.PIMpage import PIMPage
 from Pages.recruitmentPage import RecruitmentPage
 import HTMLTestRunner
-from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.common.action_chains import ActionChains
 
 
 # sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
