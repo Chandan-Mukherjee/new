@@ -1,6 +1,6 @@
 # import time
 import unittest
-# import os
+import os
 # import sys
 from selenium import webdriver
 from configparser import ConfigParser
@@ -13,8 +13,12 @@ from Pages.directoryPage import DirectoryPage
 from Pages.PIMpage import PIMPage
 from Pages.recruitmentPage import RecruitmentPage
 from Utilities.take_screenshot import Take_Screenshot
+import Relative_Project_Path
 from Utilities.logging import Get_log
-import HTMLTestRunner
+
+# import HTMLTestRunner
+
+
 
 
 # from selenium.webdriver.common.action_chains import ActionChains
@@ -35,7 +39,7 @@ class SampleUnitTest(unittest.TestCase):
     def setUp(self) -> None:
         print('This is method level setup.')
         self.driver = webdriver.Chrome(
-            executable_path=r"C:\Users\Chandan Mukherjee\PycharmProjects\ProperProjectChandan\Browsers\chromedriver.exe")
+            executable_path=Relative_Project_Path.driver_path+'chromedriver.exe')
         self.driver.maximize_window()
         self.driver.delete_all_cookies()
         self.driver.implicitly_wait(30)
@@ -56,7 +60,7 @@ class SampleUnitTest(unittest.TestCase):
 
     def test_sample(self):
         take_screenshot = Take_Screenshot(self.driver)
-        get_log=Get_log(self.driver)
+        get_log = Get_log(self.driver)
 
         self.driver.get(self.site)
         login = Loginpage(driver=self.driver)
@@ -105,4 +109,4 @@ class SampleUnitTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    HTMLTestRunner.main()
+    unittest.main()

@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import Relative_Project_Path
 
 
 class Take_Screenshot:
@@ -9,8 +10,8 @@ class Take_Screenshot:
 
     def take_screenshot(self):
         print('The current directory is: ' + str(os.getcwd()))
-        newDir = os.chdir(r'C:\Users\Chandan Mukherjee\PycharmProjects\ProperProjectChandan\Screenshots')
-        print(f"Changed the directory to: 'C:\\Users\\Chandan Mukherjee\\PycharmProjects\\ProperProjectChandan\\Screenshots'")
+        newDir = os.chdir(Relative_Project_Path.screenshotpath)
+        print(f"Changed the directory to: {Relative_Project_Path.screenshotpath}")
         current_time = time.ctime()
         empty_list = []
         for i in str(current_time):
