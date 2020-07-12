@@ -12,7 +12,11 @@ from Pages.mainLogoToOpenNewTab import MainLogoToOpenNewTab
 from Pages.directoryPage import DirectoryPage
 from Pages.PIMpage import PIMPage
 from Pages.recruitmentPage import RecruitmentPage
+from Utilities.take_screenshot import Take_Screenshot
+from Utilities.logging import Get_log
 import HTMLTestRunner
+
+
 # from selenium.webdriver.common.action_chains import ActionChains
 
 
@@ -51,38 +55,50 @@ class SampleUnitTest(unittest.TestCase):
         print('This is class level teardown.')
 
     def test_sample(self):
+        take_screenshot = Take_Screenshot(self.driver)
+        get_log=Get_log(self.driver)
+
         self.driver.get(self.site)
         login = Loginpage(driver=self.driver)
         login.enter_username(self.config['DEFAULT']['username'])
         login.enter_password(self.config['DEFAULT']['password'])
+        # get_log.log.info('Logged in to ')
 
         login.click_enter()
         homepage = HomePage(self.driver)
+        take_screenshot.take_screenshot()
 
         userpage = UserPage(self.driver)
         userpage.click_on_users()
+        take_screenshot.take_screenshot()
 
         timesheetpage = TimesheetPage(self.driver)
         timesheetpage.check_timesheet()
         timesheetpage.add_timesheet()
+        take_screenshot.take_screenshot()
 
         mainLogoToOpenNewTab = MainLogoToOpenNewTab(self.driver)
         mainLogoToOpenNewTab.click_main_logo()
         mainLogoToOpenNewTab.go_to_new_tab()
         mainLogoToOpenNewTab.click_on_partners_tab()
+        take_screenshot.take_screenshot()
 
         directoryPage = DirectoryPage(self.driver)
         directoryPage.search_directory()
+        take_screenshot.take_screenshot()
 
         pimpage = PIMPage(self.driver)
         pimpage.select_all_IDs()
         pimpage.scroll_into_view()
+        take_screenshot.take_screenshot()
 
         recruitmentpage = RecruitmentPage(self.driver)
         recruitmentpage.candidates()
         recruitmentpage.vacancies()
+        take_screenshot.take_screenshot()
 
         homepage.click_on_welcome()
+        take_screenshot.take_screenshot()
         homepage.click_logout()
 
         # time.sleep(3)
