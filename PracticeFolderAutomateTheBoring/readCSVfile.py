@@ -1,6 +1,5 @@
-import pandas
+import pandas as pd
 
-for i in dir(pandas):
-    if not i.startswith('_'):
-        print(i, end=',  ')
-
+df = pd.read_csv(
+    filepath_or_buffer=r"C:\Users\ChandanMukherjee\Desktop\annual-enterprise-survey-2019-financial-year-provisional-csv.csv")
+print(df)
