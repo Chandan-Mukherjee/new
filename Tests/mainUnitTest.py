@@ -16,9 +16,8 @@ from Utilities.take_screenshot import Take_Screenshot
 import Relative_Project_Path
 from Utilities.logging import Get_log
 
+
 # import HTMLTestRunner
-
-
 
 
 # from selenium.webdriver.common.action_chains import ActionChains
@@ -39,7 +38,7 @@ class SampleUnitTest(unittest.TestCase):
     def setUp(self) -> None:
         print('This is method level setup.')
         self.driver = webdriver.Chrome(
-            executable_path=Relative_Project_Path.driver_path+'chromedriver.exe')
+            executable_path=Relative_Project_Path.driver_path + 'chromedriver.exe')
         self.driver.maximize_window()
         self.driver.delete_all_cookies()
         self.driver.implicitly_wait(30)
