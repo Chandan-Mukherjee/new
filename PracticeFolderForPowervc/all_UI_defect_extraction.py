@@ -27,7 +27,7 @@ class All_UI_Defect_Extraction:
             'https://jazz04.rchland.ibm.com:12443/jazz/web/projects/Janus#action=com.ibm.team.workitem.runSavedQuery&id=_PZ2B0JjVEeqCTZE3K1N-Uw&index=1&orderBy=owner&direction=ascending&itemsPerPage=all&preserveFilter=true')
 
         driver.find_element_by_id('jazz_app_internal_LoginWidget_0_userId').send_keys('chandn23@in.ibm.com')
-        driver.find_element_by_id('jazz_app_internal_LoginWidget_0_password').send_keys('Sai@2020123456789')
+        driver.find_element_by_id('jazz_app_internal_LoginWidget_0_password').send_keys('Sai@20201234567890')
         driver.find_element_by_xpath("//button[@type='submit']").click()
         os.chdir(r'C:\Users\ChandanMukherjee\Desktop')
         driver.find_element_by_xpath("//img[@alt='Download as Spreadsheet (.csv)']").click()
