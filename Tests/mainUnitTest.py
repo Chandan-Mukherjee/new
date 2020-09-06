@@ -40,7 +40,7 @@ class SampleUnitTest(unittest.TestCase):
         self.driver = webdriver.Chrome(
             executable_path=Relative_Project_Path.driver_path + 'chromedriver.exe')
         self.driver.maximize_window()
-        self.driver.minimize_window()
+        # self.driver.minimize_window()
         self.driver.delete_all_cookies()
         self.driver.implicitly_wait(30)
         self.config = ConfigParser()
