@@ -3,7 +3,7 @@
 import random
 
 secret_number = random.randint(0, 10)
-print(f'Secret number is {secret_number}')
+#print(f'Secret number is {secret_number}')
 guess_count = 0
 
 guess_limit = 3
