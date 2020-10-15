@@ -56,7 +56,6 @@ try:
     driver.find_element_by_xpath("//span[text()='Resume Headline']").click()
     driver.find_element_by_xpath("//div[@class='resumeHeadline']/div/div/div/span[2]").click()
     current_text = driver.find_element_by_xpath("//form[@name='resumeHeadlineForm']/div[2]/div/textarea").text
-    print('\n------------')
     print("\nCurrent Resume Headline is: ")
     print(current_text)
     # driver.find_element_by_link_text('Save').click()
@@ -100,7 +99,7 @@ try:
     # time.sleep(sec)
     # driver.find_element_by_xpath("//a[contains(text(),'Logout')]").click()
     driver.quit()
-    print("\n----Test Successful, U[dated your naukri profile----")
+    print("\n----Test Successful, Updated your naukri profile----")
     print("\n---Smile :):):) ---")
 
 except Exception as e:
