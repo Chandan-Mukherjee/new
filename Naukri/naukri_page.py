@@ -13,9 +13,7 @@ chrome_options.add_argument("--incognito")
 
 driver = webdriver.Chrome(
     executable_path=Relative_Project_Path.driver_path + 'chromedriver.exe', options=chrome_options)
-print("\n\n--Opened Chrome in incognito mode.")
-
-driver.get('https://google.com')
+print("\n--Opened Chrome in incognito mode.")
 
 sec = 3
 
@@ -58,8 +56,8 @@ try:
     driver.find_element_by_xpath("//span[text()='Resume Headline']").click()
     driver.find_element_by_xpath("//div[@class='resumeHeadline']/div/div/div/span[2]").click()
     current_text = driver.find_element_by_xpath("//form[@name='resumeHeadlineForm']/div[2]/div/textarea").text
-    print('\n\n------------')
-    print("\n\nCurrent Resume Headline is: ")
+    print('\n------------')
+    print("\nCurrent Resume Headline is: ")
     print(current_text)
     # driver.find_element_by_link_text('Save').click()
     driver.refresh()
@@ -72,14 +70,18 @@ try:
     driver.find_element_by_xpath("//div[@class='resumeHeadline']/div/div/div/span[2]").click()
     if current_text == '4.6 years of experience in IT Industry. Currently working as a Test Engineer in Tech Mahindra Ltd. Expert in Software Testing using manual as well as Python Programming Language and UI automation with Selenium WebWebDriver.':
         driver.execute_script("window.scrollTo(0, 200);")
-        print("\n\n----Resume Headline changed to: ")
+        print("\n----Resume Headline changed to: ")
+        print(
+            "4.6 years of experience in IT Industry. Currently working as a Test Engineer in Tech Mahindra Ltd. Expert in Software Testing using manual as well as Python Programming Language and UI automation with Selenium WebDriver")
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').clear()
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(
             '4.6 years of experience in IT Industry. Currently working as a Test Engineer in Tech Mahindra Ltd. Expert in Software Testing using manual as well as Python Programming Language and UI automation with Selenium WebDriver')
     else:
         driver.execute_script("window.scrollTo(0, 200);")
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').clear()
-        print("\n\n----Resume Headline changed to: ")
+        print("\n----Resume Headline changed to: ")
+        print(
+            '4.6 years of experience in IT Industry. Currently working as a Test Engineer in Tech Mahindra Ltd. Expert in Software Testing using manual as well as Python Programming Language and UI automation with Selenium WebWebDriver.')
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(
             '4.6 years of experience in IT Industry. Currently working as a Test Engineer in Tech Mahindra Ltd. Expert in Software Testing using manual as well as Python Programming Language and UI automation with Selenium WebWebDriver.')
     driver.find_element_by_xpath(
@@ -87,21 +89,21 @@ try:
     # driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(Keys.RETURN)
     driver.refresh()
     driver.execute_script("window.scrollTo(0, 0);")
-    print('\n\n----Edited the text successfully----')
+    print('\n----Edited the text successfully----')
     element5 = WebDriverWait(driver, 15).until(
         EC.element_to_be_clickable((By.XPATH, '//img[@src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png"]')))
     driver.find_element_by_xpath('//img[@src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png"]').click()
     # time.sleep(sec)
-    print('\n\n----Clicked on main naukri logo-----')
+    print('\n----Clicked on main naukri logo-----')
     # action.move_to_element(
     #     driver.find_element_by_xpath('//a[@href="https://my.naukri.com/HomePage/view"]')).perform()
     # time.sleep(sec)
     # driver.find_element_by_xpath("//a[contains(text(),'Logout')]").click()
     driver.quit()
-    print("\n\n----Test Successful, U[dated your naukri profile----")
-    print("\n\n---Smile :):):) ---")
+    print("\n----Test Successful, U[dated your naukri profile----")
+    print("\n---Smile :):):) ---")
 
 except Exception as e:
     driver.quit()
-    print('\n\n############--------Script failed--------#############')
-    print("\n\n>>>Error is>>>: \n\n", e)
+    print('\n############--------Script failed--------#############')
+    print("\n>>>Error is>>>: \n", e)
