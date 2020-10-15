@@ -8,7 +8,7 @@ for i in range(2):
     driver = webdriver.Chrome(
         executable_path=Relative_Project_Path.driver_path + 'chromedriver.exe')
 
-    sec = 3
+    sec = 1.5
 
     try:
         driver.get('https://www.naukri.com')
