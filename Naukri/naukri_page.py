@@ -98,11 +98,12 @@ try:
     #     driver.find_element_by_xpath('//a[@href="https://my.naukri.com/HomePage/view"]')).perform()
     # time.sleep(sec)
     # driver.find_element_by_xpath("//a[contains(text(),'Logout')]").click()
-    driver.quit()
     print("\n----Test Successful, Updated your naukri profile----")
     print("\n---Smile :):):) ---")
 
 except Exception as e:
-    driver.quit()
     print('\n############--------Script failed--------#############')
     print("\n>>>Error is>>>: \n", e)
+
+finally:
+    driver.quit()
