@@ -67,22 +67,22 @@ try:
         EC.element_to_be_clickable((By.XPATH, "//span[text()='Resume Headline']")))
     driver.find_element_by_xpath("//span[text()='Resume Headline']").click()
     driver.find_element_by_xpath("//div[@class='resumeHeadline']/div/div/div/span[2]").click()
-    if current_text == 'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python.':
+    if current_text == 'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python, CRM Testing and Cloud Platform.':
         driver.execute_script("window.scrollTo(0, 200);")
         print("\n----Resume Headline changed to: ")
         print(
-            "QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python")
+            "QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python, CRM Testing and Cloud Platform")
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').clear()
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(
-            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python')
+            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python, CRM Testing and Cloud Platform')
     else:
         driver.execute_script("window.scrollTo(0, 200);")
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').clear()
         print("\n----Resume Headline changed to: ")
         print(
-            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python..')
+            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python, CRM Testing and Cloud Platform.')
         driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(
-            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python..')
+            'QA Engineer with 4.6 years of Experience including Manual and Automation Testing. Currently working as a Test Engineer at Tech Mahindra Ltd. Area of Expertise is Selenium with Python, CRM Testing and Cloud Platform.')
     driver.find_element_by_xpath(
         "//button[text()='Save' and @class='waves-effect waves-light btn-large blue-btn' ]").click()
     # driver.find_element_by_xpath('//*[@id="resumeHeadlineTxt"]').send_keys(Keys.RETURN)
