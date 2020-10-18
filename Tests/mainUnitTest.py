@@ -105,6 +105,8 @@ class SampleUnitTest(unittest.TestCase):
         take_screenshot.take_screenshot()
         homepage.click_logout()
 
+
+
         # time.sleep(3)
 
 
