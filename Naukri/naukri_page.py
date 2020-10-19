@@ -7,6 +7,8 @@ from configparser import ConfigParser
 import os
 import Relative_Project_Path
 import time
+
+
 # 1. This three lines are for opening chrome in incognito mode...
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
@@ -93,7 +95,7 @@ try:
                                         "//input[@class='fileUpload waves-effect waves-light btn-large'][@type='file'][@id='attachCV']")))
         driver.find_element_by_xpath(
             "//input[@class='fileUpload waves-effect waves-light btn-large'][@type='file'][@id='attachCV']").send_keys(
-            'C:\\Users\\Chandan Mukherjee\\Desktop\Final and Updated CV\\Chandan Mukherjee.pdf')
+            'C:\\Users\\Chandan Mukherjee\\Desktop\\Final and Updated CV\\Chandan Mukherjee.pdf')
         print('\n---CV is updated.')
     except Exception as e:
         print('\n---unable to attach CV')
