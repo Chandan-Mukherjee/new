@@ -7,7 +7,7 @@ from configparser import ConfigParser
 import os
 import Relative_Project_Path
 import time
-
+import pyautogui
 
 # 1. This three lines are for opening chrome in incognito mode...
 chrome_options = webdriver.ChromeOptions()
@@ -90,16 +90,30 @@ try:
     driver.execute_script("window.scrollTo(0, 0);")
     print('\n----Edited the text successfully----')
     try:
+        time.sleep(2)
         elementCV = WebDriverWait(driver, 15).until(
-            EC.element_to_be_clickable((By.XPATH,
-                                        "//input[@class='fileUpload waves-effect waves-light btn-large'][@type='file'][@id='attachCV']")))
-        driver.find_element_by_xpath(
-            "//input[@class='fileUpload waves-effect waves-light btn-large'][@type='file'][@id='attachCV']").send_keys(
+            EC.element_to_be_clickable((By.CSS_SELECTOR,
+                                        "#attachCV")))
+        driver.find_element_by_css_selector(
+            "#attachCV").send_keys(
             'C:\\Users\\Chandan Mukherjee\\Desktop\\Final and Updated CV\\Chandan Mukherjee.pdf')
         print('\n---CV is updated.')
     except Exception as e:
         print('\n---unable to attach CV')
         print('\n', e)
+    try:
+        time.sleep(2)
+        driver.find_element_by_css_selector(
+            "#attachCV").click()
+        time.sleep(4)  # waiting for window popup to open
+        pyautogui.write(
+            "C:\\Users\\Chandan Mukherjee\\Desktop\\Final and Updated CV\\Chandan Mukherjee.pdf")  # path of File
+        pyautogui.press('enter')
+        print('\n---CV is updated.')
+    except Exception as e:
+        print('\n---unable to attach CV')
+        print('\n', e)
+
     element5 = WebDriverWait(driver, 15).until(
         EC.element_to_be_clickable((By.XPATH, '//img[@src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png"]')))
     driver.find_element_by_xpath('//img[@src="https://static.naukimg.com/s/4/100/i/naukri_Logo.png"]').click()
