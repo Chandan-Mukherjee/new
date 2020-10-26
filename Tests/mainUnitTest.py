@@ -1,7 +1,4 @@
-# import time
 import unittest
-import os
-# import sys
 from selenium import webdriver
 from configparser import ConfigParser
 from Pages.homePage import HomePage
@@ -18,11 +15,7 @@ from Utilities.logging import Get_log
 
 
 # import HTMLTestRunner
-
-
 # from selenium.webdriver.common.action_chains import ActionChains
-
-
 # sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 
@@ -104,8 +97,6 @@ class SampleUnitTest(unittest.TestCase):
         homepage.click_on_welcome()
         take_screenshot.take_screenshot()
         homepage.click_logout()
-
-
 
         # time.sleep(3)
 

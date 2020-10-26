@@ -9,6 +9,7 @@ import Relative_Project_Path
 import time
 import pyautogui
 
+
 # 1. This three lines are for opening chrome in incognito mode...
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")

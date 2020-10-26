@@ -1,4 +1,9 @@
-import time
-print( type(type(int)))
+a = list(range(10))
 
-print(time.time())
+iterator = iter(a)
+
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
